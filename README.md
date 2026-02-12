@@ -1,36 +1,47 @@
 # LaTeX Resume
 
-A modular, professionally designed LaTeX resume with a **Python GUI manager** for easy editing — no LaTeX knowledge required.
+A modular, professionally designed LaTeX resume collection with **two themes** and a **Python GUI manager** for easy editing.
 
 <p align="center">
   <img src="preview.png" alt="Resume Preview" width="600">
 </p>
 
-## Features
+## Themes
 
-- **Modular architecture** — content, styling, and macros are cleanly separated into individual files
-- **GUI editor** — a tkinter-based Python app for adding, editing, and reordering resume entries
-- **One-click PDF** — save and compile to PDF directly from the GUI
-- **Easy theming** — change colors, fonts, and margins in a single config file
-- **13 section types** — Header, Profile, Education, Experience, Projects, Organisations, Volunteering, Skills, Certifications, Courses, Honours & Awards, Languages, and sub-roles
-- **Skill tags** — styled rounded badges rendered with TikZ
-- **FontAwesome icons** — contact info uses FontAwesome 5 icons
+| Theme | Style | Preview |
+|-------|-------|---------|
+| **`florian/`** | Single-column, navy/steel blue, skill tags, 2-page | Classic professional |
+| **`helene/`** | Two-column sidebar, blush pink, rounded banners, 1-page | Modern feminine |
+
+Each theme is self-contained with its own `resume.tex`, `config.tex`, `commands.tex`, and `content.tex`.
 
 ## Project Structure
 
-| File | Purpose |
-|------|---------|
-| `resume.tex` | Master document — loads packages and inputs the three files below |
-| `resume-config.tex` | Colors, fonts, margins, section heading styles |
-| `resume-commands.tex` | Reusable LaTeX macros (`\experience`, `\education`, `\project`, etc.) |
-| `resume-content.tex` | **Your resume data** — the only file you edit for content changes |
-| `resume-content.example.tex` | Example with placeholder data — copy to `resume-content.tex` to get started |
-| `resume_manager.py` | Python GUI for editing entries and compiling the PDF |
+```
+.
+├── README.md
+├── LICENSE
+├── preview.png
+├── resume_manager.py           # GUI editor (works with any theme)
+│
+├── florian/                    # Single-column theme
+│   ├── resume.tex              # Master document
+│   ├── config.tex              # Colors, fonts, margins
+│   ├── commands.tex            # LaTeX macros
+│   ├── content.tex             # Resume data
+│   └── content.example.tex    # Example with placeholder data
+│
+└── helene/                     # Two-column sidebar theme
+    ├── resume.tex              # Master document
+    ├── config.tex              # Colors, fonts, margins
+    ├── commands.tex            # LaTeX macros
+    └── content.tex             # Resume data
+```
 
 ## Prerequisites
 
 - **TeX Live 2023+** (or MiKTeX) with these packages:
-  `fontenc` `inputenc` `geometry` `xcolor` `hyperref` `titlesec` `enumitem` `tabularx` `multicol` `tikz` `fontawesome5` `sourcesanspro`
+  `fontenc` `inputenc` `geometry` `xcolor` `hyperref` `titlesec` `enumitem` `tabularx` `multicol` `tikz` `fontawesome5` `sourcesanspro` `ragged2e` `parskip`
 - **Python 3.10+** (for the GUI manager only — not needed to compile the PDF)
 - `pdflatex` on your PATH
 
@@ -40,13 +51,23 @@ A modular, professionally designed LaTeX resume with a **Python GUI manager** fo
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/latex-resume.git
-cd latex-resume
+git clone https://github.com/lumenworksco/Resume.git
+cd Resume
 
-# Start from the example (or edit resume-content.tex directly)
-cp resume-content.example.tex resume-content.tex
+# Pick a theme and compile
+cd florian
+pdflatex resume.tex && pdflatex resume.tex
 
-# Edit resume-content.tex with your information, then compile
+# Or use the other theme
+cd ../helene
+pdflatex resume.tex && pdflatex resume.tex
+```
+
+To start from scratch with the single-column theme:
+```bash
+cd florian
+cp content.example.tex content.tex
+# Edit content.tex with your information
 pdflatex resume.tex && pdflatex resume.tex
 ```
 
@@ -55,7 +76,11 @@ pdflatex resume.tex && pdflatex resume.tex
 ### Option 2: Use the GUI Manager
 
 ```bash
+# Manage the florian/ resume (default)
 python3 resume_manager.py
+
+# Or manage a different theme
+python3 resume_manager.py helene
 ```
 
 The GUI has three panels:
@@ -76,26 +101,35 @@ The GUI has three panels:
 └────────────────────────────────────────────────────────┘
 ```
 
-Click **Save & Compile PDF** to regenerate `resume-content.tex` and build a fresh PDF. A `.bak` backup is created before every save.
+Click **Save & Compile PDF** to regenerate `content.tex` and build a fresh PDF. A `.bak` backup is created before every save.
 
 ## Customization
 
 ### Colors
 
-Edit the color palette in `resume-config.tex`:
+Edit the color palette in `config.tex` for either theme:
+
+**Single-column theme (`florian/config.tex`):**
 
 | Color | Default | Usage |
 |-------|---------|-------|
 | `primary` | Dark navy `(20, 50, 90)` | Name, headings |
 | `accent` | Steel blue `(42, 98, 154)` | Links, icons, organisation names |
 | `subtle` | Warm grey `(108, 117, 125)` | Dates, secondary text |
-| `divider` | Light grey `(200, 208, 216)` | Section rules |
-| `tagbg` | Soft blue `(232, 240, 248)` | Skill tag background |
-| `tagtext` | Deep blue `(30, 60, 110)` | Skill tag text |
+| `tagbg` / `tagtext` | Soft blue / Deep blue | Skill tag colors |
+
+**Two-column theme (`helene/config.tex`):**
+
+| Color | Default | Usage |
+|-------|---------|-------|
+| `sidebar` | Warm blush `(243, 228, 221)` | Sidebar background |
+| `primary` | Deep brown `(55, 45, 42)` | Name, headings |
+| `accent` | Warm rose `(180, 130, 110)` | Icons, links |
+| `sectionbg` | Light blush `(238, 222, 215)` | Section heading banners |
 
 ### Fonts
 
-The default font is **Source Sans Pro** (light weight). To change it, swap the font package in `resume-config.tex`:
+The default font is **Source Sans Pro** (light weight). To change it, swap the font package in `config.tex`:
 
 ```latex
 % \usepackage[default,light]{sourcesanspro}  % current
@@ -104,11 +138,11 @@ The default font is **Source Sans Pro** (light weight). To change it, swap the f
 
 ### PDF Metadata
 
-Update the `pdfauthor` and `pdftitle` fields in `resume-config.tex` to match your name.
+Update the `pdfauthor` and `pdftitle` fields in `config.tex` to match your name.
 
-## Available Commands
+## Available Commands (Single-Column Theme)
 
-All commands are defined in `resume-commands.tex`. Use them in `resume-content.tex`:
+All commands are defined in `commands.tex`. Use them in `content.tex`:
 
 | Command | Arguments | Description |
 |---------|-----------|-------------|

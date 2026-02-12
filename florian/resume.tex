@@ -5,16 +5,16 @@
 %%
 %%  PROJECT STRUCTURE
 %%  -----------------
-%%  resume.tex          — Master document (loads packages + project files)
-%%  resume-config.tex   — Colours, fonts, margins, hyperlinks, section styles
-%%  resume-commands.tex — Reusable macros (\experience, \education, etc.)
-%%  resume-content.tex  — YOUR DATA (edit this file to update your resume)
+%%  resume.tex    — Master document (loads packages + project files)
+%%  config.tex    — Colours, fonts, margins, hyperlinks, section styles
+%%  commands.tex  — Reusable macros (\experience, \education, etc.)
+%%  content.tex   — YOUR DATA (edit this file to update your resume)
 %%
 %%  QUICK START
 %%  -----------
-%%  1. To update your resume       → edit resume-content.tex
-%%  2. To change colours/fonts     → edit resume-config.tex
-%%  3. To add new entry types      → edit resume-commands.tex
+%%  1. To update your resume       → edit content.tex
+%%  2. To change colours/fonts     → edit config.tex
+%%  3. To add new entry types      → edit commands.tex
 %%  4. Compile: pdflatex resume.tex && pdflatex resume.tex
 %% ==========================================================================
 
@@ -34,8 +34,8 @@
 \usepackage{fontawesome5}
 
 % ---------- LOAD PROJECT FILES ----------
-\input{resume-config}       % Colours, fonts, margins, section styles
-\input{resume-commands}     % Reusable commands and environments
+\input{config}              % Colours, fonts, margins, section styles
+\input{commands}            % Reusable commands and environments
 
 % ---------- SANS-SERIF DEFAULT ----------
 \renewcommand{\familydefault}{\sfdefault}
@@ -47,6 +47,6 @@
 
 \bodysize                   % Set default body font size
 
-\input{resume-content}      % All your resume data lives here
+\input{content}             % All your resume data lives here
 
 \end{document}

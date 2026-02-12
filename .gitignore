@@ -10,8 +10,9 @@
 *.synctex.gz
 *.synctex(busy)
 
-# Compiled PDF (compile locally with: pdflatex resume.tex)
-resume.pdf
+# Compiled PDFs (compile locally with: pdflatex resume.tex)
+*.pdf
+!preview.png
 
 # Python
 __pycache__/

@@ -1096,11 +1096,16 @@ def dict_to_entry(section_key: str, d: dict):
 # ══════════════════════════════════════════════════════════════════════════
 
 class ResumeManagerApp(tk.Tk):
-    WORKING_DIR = os.path.dirname(os.path.abspath(__file__))
-    CONTENT_FILE = "resume-content.tex"
+    CONTENT_FILE = "content.tex"
 
-    def __init__(self):
+    def __init__(self, resume_dir=None):
         super().__init__()
+        # Default to florian/ subdirectory; pass a path to manage a different resume
+        base = os.path.dirname(os.path.abspath(__file__))
+        if resume_dir:
+            self.WORKING_DIR = os.path.abspath(resume_dir)
+        else:
+            self.WORKING_DIR = os.path.join(base, "florian")
         self.geometry("1100x720")
         self.minsize(900, 550)
 
@@ -1448,5 +1453,6 @@ class ResumeManagerApp(tk.Tk):
 # ══════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
-    app = ResumeManagerApp()
+    resume_dir = sys.argv[1] if len(sys.argv) > 1 else None
+    app = ResumeManagerApp(resume_dir=resume_dir)
     app.mainloop()
