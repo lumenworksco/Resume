@@ -1,0 +1,66 @@
+%% ==========================================================================
+%%  CONFIGURATION — Colours, Fonts, Margins, Hyperlinks
+%%  -----------------------------------------------------------------------
+%%  Edit this file to quickly retheme or adjust the layout.
+%%  Everything here is a knob you can turn without touching content.
+%% ==========================================================================
+
+% ---------- COLOUR PALETTE ----------
+% Change these to retheme the entire resume instantly.
+\definecolor{primary}{RGB}{20, 50, 90}        % dark navy — headings & name
+\definecolor{accent}{RGB}{42, 98, 154}        % steel blue — links & icons
+\definecolor{subtle}{RGB}{108, 117, 125}      % warm grey — dates & secondary text
+\definecolor{divider}{RGB}{200, 208, 216}     % light grey — section rules
+\definecolor{tagbg}{RGB}{232, 240, 248}       % pale blue — skill tag background
+\definecolor{tagtext}{RGB}{30, 60, 110}       % dark blue — skill tag text
+
+% ---------- MARGINS ----------
+\geometry{
+    a4paper,
+    top    = 0.45in,
+    bottom = 0.45in,
+    left   = 0.5in,
+    right  = 0.5in,
+}
+
+% ---------- FONTS ----------
+% Using Source Sans Pro (highly legible, modern, professional).
+% Swap the package below to change the whole look:
+%   \usepackage{lato}        — rounded, friendly
+%   \usepackage{raleway}     — geometric, elegant
+%   \usepackage{roboto}      — Google's workhorse
+%   \usepackage{inter}       — optimised for screens
+\usepackage[default,light]{sourcesanspro}
+
+% ---------- FONT SIZES (easy to tweak) ----------
+\newcommand{\namesize}{\fontsize{24}{28}\selectfont}
+\newcommand{\headlinesize}{\fontsize{10}{12}\selectfont}
+\newcommand{\contactsize}{\fontsize{8.5}{11}\selectfont}
+\newcommand{\sectionheadsize}{\fontsize{10}{12}\selectfont}
+\newcommand{\bodysize}{\fontsize{9}{12}\selectfont}
+\newcommand{\smallsize}{\fontsize{8}{10}\selectfont}
+
+% ---------- HYPERLINKS ----------
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = accent,
+    linkcolor   = accent,
+    pdfauthor   = {Florian Braun},
+    pdftitle    = {Florian Braun -- Resume},
+    pdfsubject  = {Resume},
+}
+
+% ---------- SECTION HEADING STYLE ----------
+\titleformat{\section}
+    {\sectionheadsize\bfseries\color{primary}}
+    {}
+    {0pt}
+    {\MakeUppercase}
+    [\vspace{-5pt}{\color{divider}\rule{\linewidth}{0.8pt}}]
+
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% ---------- GLOBAL SPACING ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}

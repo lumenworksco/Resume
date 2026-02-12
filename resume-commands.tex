@@ -1,0 +1,122 @@
+%% ==========================================================================
+%%  CUSTOM COMMANDS — Reusable building blocks for resume entries
+%%  -----------------------------------------------------------------------
+%%  To add a new experience, education entry, etc., just use these commands
+%%  in resume-content.tex. No need to touch raw LaTeX formatting.
+%% ==========================================================================
+
+% ---------- CONTACT ICON HELPERS ----------
+% Usage: \contactitem{\faIcon{envelope}}{text}  or  \contactlink{\faIcon{globe}}{url}{label}
+\newcommand{\contactitem}[2]{%
+    {\color{accent}#1}\;\,#2%
+}
+\newcommand{\contactlink}[3]{%
+    {\color{accent}#1}\;\,\href{#2}{#3}%
+}
+\newcommand{\contactsep}{\quad{\color{divider}\textbar}\quad}
+
+% ---------- EXPERIENCE ENTRY ----------
+% Usage: \experience{Title}{Organisation}{Start -- End}{Location}
+%        followed by a \begin{bullets}...\end{bullets} block
+\newcommand{\experience}[4]{%
+    \vspace{4pt}%
+    \noindent{\bodysize\textbf{#1}\hfill{\smallsize\color{subtle}#3}}\par\vspace{1pt}%
+    \noindent{\bodysize\textit{\color{accent}#2}\hfill{\smallsize\color{subtle}#4}}\par%
+    \vspace{2pt}%
+}
+
+% ---------- SUB-ROLE (for showing a second role at the same org) ----------
+% Usage: \subrole{Title}{Start -- End}
+\newcommand{\subrole}[2]{%
+    \vspace{4pt}%
+    {\bodysize\textbf{#1}\hfill{\smallsize\color{subtle}#2}}%
+    \vspace{2pt}%
+}
+
+% ---------- EDUCATION ENTRY ----------
+% Usage: \education{Institution}{Degree / Programme}{Start -- End}
+\newcommand{\education}[3]{%
+    \vspace{4pt}%
+    \noindent{\bodysize\textbf{#1}\hfill{\smallsize\color{subtle}#3}}\par\vspace{1pt}%
+    \noindent{\bodysize\color{subtle}\textit{#2}}\par%
+    \vspace{2pt}%
+}
+
+% ---------- COMPACT BULLET LIST ----------
+\newenvironment{bullets}{%
+    \vspace{0pt}%
+    \begin{itemize}[leftmargin=15pt, itemsep=1pt, parsep=0pt, topsep=2pt]%
+    \bodysize%
+}{%
+    \end{itemize}%
+    \vspace{1pt}%
+}
+
+% ---------- SKILL TAG ----------
+% Usage: \skilltag{Python}
+\newcommand{\skilltag}[1]{%
+    \tikz[baseline=(tag.base)]{%
+        \node[fill=tagbg, text=tagtext, rounded corners=3pt,
+              inner xsep=6pt, inner ysep=2.5pt,
+              font=\smallsize\bfseries] (tag) {#1};%
+    }\,%
+}
+
+% ---------- SKILL CATEGORY ----------
+% Usage: \skillcategory{Category}{Tag1, Tag2, Tag3}
+\newcommand{\skillcategory}[2]{%
+    \vspace{3pt}%
+    {\smallsize\color{subtle}\textbf{\uppercase{#1}}\quad}#2%
+    \vspace{2pt}%
+}
+
+% ---------- PROJECT ENTRY ----------
+% Usage: \project{Title}{Date}
+%        followed by a \begin{bullets}...\end{bullets} block
+\newcommand{\project}[2]{%
+    \vspace{4pt}%
+    \noindent{\bodysize\textbf{#1}\hfill{\smallsize\color{subtle}#2}}\par%
+    \vspace{2pt}%
+}
+
+% ---------- ORGANISATION ENTRY ----------
+% Usage: \organisation{Organisation}{Role}{Date}{Association}
+\newcommand{\organisation}[4]{%
+    \vspace{4pt}%
+    \noindent{\bodysize\textbf{#1}\hfill{\smallsize\color{subtle}#3}}\par\vspace{1pt}%
+    \noindent{\bodysize\textit{\color{accent}#2}\hfill{\smallsize\color{subtle}#4}}\par%
+    \vspace{2pt}%
+}
+
+% ---------- VOLUNTEER ENTRY ----------
+% Usage: \volunteer{Role}{Organisation}{Date}{Category}
+\newcommand{\volunteer}[4]{%
+    \vspace{4pt}%
+    \noindent{\bodysize\textbf{#1}\hfill{\smallsize\color{subtle}#3}}\par\vspace{1pt}%
+    \noindent{\bodysize\textit{\color{accent}#2}\hfill{\smallsize\color{subtle}#4}}\par%
+    \vspace{2pt}%
+}
+
+% ---------- AWARD ENTRY ----------
+% Usage: \award{Title}{Issuer}{Year}
+\newcommand{\award}[3]{%
+    {\bodysize\textbf{#1}}{\smallsize\color{subtle}\quad#2 \hfill #3}%
+}
+
+% ---------- LANGUAGE ENTRY ----------
+% Usage: \langentry{Level}{Language1, Language2}
+\newcommand{\langentry}[2]{%
+    {\bodysize\textbf{#1:}\enspace#2}%
+}
+
+% ---------- HEADER BLOCK ----------
+\newcommand{\makeheader}[4]{%
+    % #1 = name, #2 = headline, #3 = contact line 1, #4 = contact line 2
+    \begin{center}
+        {\namesize\bfseries\color{primary}#1}\\[4pt]
+        {\headlinesize\color{subtle}#2}\\[6pt]
+        {\contactsize #3}\\[2pt]
+        {\contactsize #4}
+    \end{center}
+    \vspace{2pt}
+}

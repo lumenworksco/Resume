@@ -1,0 +1,52 @@
+%% ==========================================================================
+%%  Professional Resume Template
+%%  -----------------------------------------------------------------------
+%%  Compile with:  pdflatex resume.tex   (run twice for hyperlinks)
+%%
+%%  PROJECT STRUCTURE
+%%  -----------------
+%%  resume.tex          — Master document (loads packages + project files)
+%%  resume-config.tex   — Colours, fonts, margins, hyperlinks, section styles
+%%  resume-commands.tex — Reusable macros (\experience, \education, etc.)
+%%  resume-content.tex  — YOUR DATA (edit this file to update your resume)
+%%
+%%  QUICK START
+%%  -----------
+%%  1. To update your resume       → edit resume-content.tex
+%%  2. To change colours/fonts     → edit resume-config.tex
+%%  3. To add new entry types      → edit resume-commands.tex
+%%  4. Compile: pdflatex resume.tex && pdflatex resume.tex
+%% ==========================================================================
+
+\documentclass[10pt, a4paper]{article}
+
+% ---------- CORE PACKAGES ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}              % margins set in resume-config.tex
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+
+% ---------- LOAD PROJECT FILES ----------
+\input{resume-config}       % Colours, fonts, margins, section styles
+\input{resume-commands}     % Reusable commands and environments
+
+% ---------- SANS-SERIF DEFAULT ----------
+\renewcommand{\familydefault}{\sfdefault}
+
+% ==========================================================================
+%                             DOCUMENT
+% ==========================================================================
+\begin{document}
+
+\bodysize                   % Set default body font size
+
+\input{resume-content}      % All your resume data lives here
+
+\end{document}
