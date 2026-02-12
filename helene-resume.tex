@@ -1,0 +1,40 @@
+%% ==========================================================================
+%%  Professional Resume — Two-Column Layout
+%%  -----------------------------------------------------------------------
+%%  Compile with:  pdflatex helene-resume.tex   (run twice for hyperlinks)
+%% ==========================================================================
+
+\documentclass[10pt, a4paper]{article}
+
+% ---------- CORE PACKAGES ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\usepackage{parskip}
+
+% ---------- LOAD PROJECT FILES ----------
+\input{helene-config}
+\input{helene-commands}
+
+% ---------- SANS-SERIF DEFAULT ----------
+\renewcommand{\familydefault}{\sfdefault}
+
+% ==========================================================================
+%                             DOCUMENT
+% ==========================================================================
+\begin{document}
+
+\bodysize
+
+\input{helene-content}
+
+\end{document}

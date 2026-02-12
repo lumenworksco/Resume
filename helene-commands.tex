@@ -1,0 +1,124 @@
+%% ==========================================================================
+%%  CUSTOM COMMANDS — Two-Column Blush Resume Layout
+%% ==========================================================================
+
+% ---------- TWO-COLUMN PAGE LAYOUT ----------
+% Sidebar width: 35% of page, Main column: 65%
+\newlength{\sidebarwidth}
+\setlength{\sidebarwidth}{0.33\paperwidth}
+\newlength{\mainwidth}
+\setlength{\mainwidth}{0.67\paperwidth}
+\newlength{\sidebarpadding}
+\setlength{\sidebarpadding}{20pt}
+\newlength{\mainpadding}
+\setlength{\mainpadding}{24pt}
+
+% ---------- SIDEBAR SECTION HEADING ----------
+\newcommand{\sidebarsection}[1]{%
+    \vspace{10pt}%
+    {\sectionheadsize\bfseries\color{primary}#1}\\[4pt]%
+    {\color{divider}\rule{0.9\linewidth}{0.6pt}}%
+    \vspace{6pt}\par%
+}
+
+% ---------- MAIN COLUMN SECTION HEADING (rounded banner) ----------
+\newcommand{\mainsection}[1]{%
+    \vspace{10pt}%
+    \noindent\tikz{%
+        \node[fill=sectionbg, rounded corners=6pt,
+              inner xsep=20pt, inner ysep=6pt,
+              text width=\dimexpr\linewidth-40pt\relax,
+              align=center,
+              font=\sectionheadsize\itshape\color{primary}] {#1};%
+    }%
+    \vspace{8pt}\par%
+}
+
+% ---------- DATE BADGE ----------
+\newcommand{\datebadge}[1]{%
+    \tikz[baseline=(badge.base)]{%
+        \node[fill=datebg, rounded corners=4pt,
+              inner xsep=8pt, inner ysep=3pt,
+              font=\smallsize\color{subtle}] (badge) {#1};%
+    }%
+}
+
+% ---------- CONTACT ICON HELPERS ----------
+\newcommand{\contactitem}[2]{%
+    \vspace{3pt}%
+    \noindent{\color{accent}#1}\;\;{\contactsize\color{sidebartext}#2}\par%
+}
+\newcommand{\contactlink}[3]{%
+    \vspace{3pt}%
+    \noindent{\color{accent}#1}\;\;{\contactsize\href{#2}{\color{sidebartext}#3}}\par%
+}
+
+% ---------- LANGUAGE ENTRY ----------
+\newcommand{\langentry}[2]{%
+    \vspace{2pt}%
+    \noindent{\smallsize\bfseries\MakeUppercase{#1}}\hfill{\smallsize\color{subtle}#2}\par%
+}
+
+% ---------- SKILL ENTRY (plain list item) ----------
+\newcommand{\skillitem}[1]{%
+    \vspace{1.5pt}%
+    \noindent{\bodysize\color{sidebartext}#1}\par%
+}
+
+% ---------- INTEREST ITEM (with icon) ----------
+\newcommand{\interestitem}[2]{%
+    {\color{accent}#1}\;\,{\smallsize\color{sidebartext}#2}%
+}
+
+% ---------- CERTIFICATION ENTRY ----------
+\newcommand{\certentry}[1]{%
+    \vspace{2pt}%
+    \noindent{\smallsize\color{sidebartext}#1}\par%
+}
+
+% ---------- EXPERIENCE ENTRY ----------
+\newcommand{\experienceentry}[4]{%
+    % #1=Title, #2=Organisation, #3=Date, #4=Location
+    \vspace{2pt}%
+    \datebadge{#3}\par\vspace{4pt}%
+    \noindent{\bodysize\bfseries\color{primary}#1}\par\vspace{1pt}%
+    \noindent{\bodysize\color{subtle}#2\ifx&#4&\else{} --- #4\fi}\par%
+    \vspace{3pt}%
+}
+
+% ---------- SUB-ROLE ----------
+\newcommand{\subroleentry}[2]{%
+    % #1=Title, #2=Date
+    \vspace{6pt}%
+    \datebadge{#2}\par\vspace{4pt}%
+    \noindent{\bodysize\bfseries\color{primary}#1}\par%
+    \vspace{3pt}%
+}
+
+% ---------- EDUCATION ENTRY ----------
+\newcommand{\educationentry}[3]{%
+    % #1=Institution, #2=Degree, #3=Date
+    \vspace{2pt}%
+    \datebadge{#3}\par\vspace{4pt}%
+    \noindent{\bodysize\bfseries\color{primary}#2}\par\vspace{1pt}%
+    \noindent{\bodysize\color{subtle}#1}\par%
+    \vspace{6pt}%
+}
+
+% ---------- COMPACT BULLET LIST ----------
+\newenvironment{bullets}{%
+    \vspace{1pt}%
+    \begin{itemize}[leftmargin=14pt, itemsep=1pt, parsep=0pt, topsep=2pt]%
+    \bodysize\color{sidebartext}%
+}{%
+    \end{itemize}%
+    \vspace{2pt}%
+}
+
+% ---------- HEADER BLOCK ----------
+\newcommand{\makeheader}[3]{%
+    % #1 = first name, #2 = last name, #3 = headline
+    {\namesize\color{primary}#1}\par\vspace{-2pt}%
+    {\lastnamesize\bfseries\color{primary}#2}\par\vspace{6pt}%
+    {\headlinesize\color{subtle}\spaceskip=0.4em\relax\MakeUppercase{#3}}\par%
+}

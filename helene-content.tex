@@ -1,0 +1,117 @@
+%% ==========================================================================
+%%  CONTENT — Resume data (two-column layout)
+%% ==========================================================================
+
+% Draw sidebar background (full page height)
+\begin{tikzpicture}[remember picture, overlay]
+    \fill[sidebar] (current page.north west) rectangle
+        ([xshift=\sidebarwidth]current page.south west);
+\end{tikzpicture}%
+%
+\noindent\begin{minipage}[t]{\sidebarwidth}%
+    \vspace{28pt}%
+    \hspace{\sidebarpadding}%
+    \begin{minipage}[t]{\dimexpr\sidebarwidth-2\sidebarpadding\relax}
+        \RaggedRight
+
+        % ========================== HEADER ========================
+        \makeheader{H\'el\`ene}{David}{Business Management and Marketing Student}
+
+        \vspace{4pt}
+
+        % ========================== CONTACT =======================
+        \sidebarsection{Contact}
+
+        \contactitem{\faIcon{phone-alt}}{+352\,621\,217\,427}
+        \contactlink{\faIcon{envelope}}{mailto:helene.david@proton.me}{helene.david@proton.me}
+        \contactitem{\faIcon{map-marker-alt}}{Leuven, Belgium}
+        \contactlink{\faIcon{linkedin}}{https://www.linkedin.com/in/h\%C3\%A9l\%C3\%A8nedavid-9ba509310}{LinkedIn}
+        \contactlink{\faIcon{globe}}{https://hdav.myportfolio.com}{hdav.myportfolio.com}
+
+        % ========================== LANGUAGES =====================
+        \sidebarsection{Languages}
+
+        \langentry{French}{Native}
+        \langentry{English}{Full Professional}
+        \langentry{German}{Limited Working}
+        \langentry{Dutch}{Limited Working}
+
+        % ========================== SKILLS ========================
+        \sidebarsection{Skills}
+
+        \skillitem{Adobe Illustrator}
+        \skillitem{Adobe Photoshop}
+        \skillitem{Graphic Design}
+        \skillitem{Social Media Management}
+        \skillitem{Content Creation}
+        \skillitem{Digital Marketing}
+        \skillitem{Brand Strategy}
+        \skillitem{Event Planning}
+        \skillitem{SEO Fundamentals}
+
+        % ========================= CERTIFICATIONS =================
+        \sidebarsection{Certifications}
+
+        \certentry{LinkedIn Marketing Strategy}
+        \certentry{Graphic Design Essentials}
+        \certentry{Inbound Sales}
+        \certentry{LinkedIn Content \& Creative Design}
+        \certentry{SEO Essentials with Semrush}
+
+        % ========================== INTERESTS =====================
+        \sidebarsection{Interests}
+
+        \vspace{4pt}
+        \noindent
+        \begin{tabular}{@{}l@{\hspace{12pt}}l@{}}
+            \interestitem{\faIcon{palette}}{Design} &
+            \interestitem{\faIcon{camera}}{Photography} \\[5pt]
+            \interestitem{\faIcon{plane}}{Travel} &
+            \interestitem{\faIcon{book}}{Reading} \\[5pt]
+            \interestitem{\faIcon{music}}{Music} &
+            \interestitem{\faIcon{utensils}}{Cooking} \\
+        \end{tabular}
+
+    \end{minipage}
+\end{minipage}%
+\begin{minipage}[t]{\dimexpr\mainwidth-2pt\relax}%
+    \vspace{28pt}%
+    \hspace{\mainpadding}%
+    \begin{minipage}[t]{\dimexpr\mainwidth-2\mainpadding-2pt\relax}
+        \RaggedRight
+
+        % ========================== EDUCATION =====================
+        \mainsection{Education}
+
+        \educationentry{UC Leuven-Limburg}{Bachelor of Applied Science (BASc), International Business}{Sep 2024 -- Jul 2027}
+
+        \educationentry{ULB (Universit\'e Libre de Bruxelles)}{Bachelor of Science (BS), Biomedical Sciences}{Feb 2024 -- Jun 2024}
+
+        \educationentry{ULB (Universit\'e Libre de Bruxelles)}{Bachelor of Arts (BA), Political Science}{Sep 2023 -- Jan 2024}
+
+        \educationentry{European School of Luxembourg 1}{European Baccalaureate}{Sep 2009 -- Jul 2023}
+
+        % ========================== EXPERIENCE ====================
+        \mainsection{Experience}
+
+        \experienceentry{Head of Social Media}{Insignia --- UCLL International Student Association}{Sep 2025 -- Present}{Leuven, Belgium}
+        \begin{bullets}
+            \item Oversee a small team to manage Insignia's online presence and create engaging digital content across multiple platforms.
+            \item Develop content strategy and coordinate visual branding for events and campaigns.
+        \end{bullets}
+
+        \subroleentry{Member}{Sep 2024 -- Sep 2025}
+        \begin{bullets}
+            \item Helped plan and coordinate student-focused events as part of UCLL's international student organisation.
+        \end{bullets}
+
+        \vspace{4pt}
+
+        \experienceentry{Co-Founder}{Pulse Watch Co.}{Nov 2024 -- Present}{Leuven, Belgium}
+        \begin{bullets}
+            \item Co-founded a modern watchmaking brand combining timeless craftsmanship with contemporary design.
+            \item Handle brand identity, visual design, and marketing strategy for the launch phase.
+        \end{bullets}
+
+    \end{minipage}
+\end{minipage}

@@ -1,0 +1,53 @@
+%% ==========================================================================
+%%  CONFIGURATION — Blush/Feminine Two-Column Theme
+%% ==========================================================================
+
+% ---------- COLOUR PALETTE ----------
+\definecolor{sidebar}{RGB}{243, 228, 221}      % warm blush pink — sidebar background
+\definecolor{sidebartext}{RGB}{60, 50, 48}      % dark brown — sidebar text
+\definecolor{primary}{RGB}{55, 45, 42}          % deep brown — headings & name
+\definecolor{accent}{RGB}{180, 130, 110}        % warm rose — links & icons
+\definecolor{subtle}{RGB}{120, 105, 100}        % muted brown — dates & secondary text
+\definecolor{divider}{RGB}{210, 195, 188}       % blush grey — section rules
+\definecolor{sectionbg}{RGB}{238, 222, 215}     % light blush — section heading banners
+\definecolor{datebg}{RGB}{238, 222, 215}        % light blush — date badges
+\definecolor{tagbg}{RGB}{243, 228, 221}         % pale blush — skill tag background
+\definecolor{tagtext}{RGB}{80, 60, 55}          % brown — skill tag text
+\definecolor{white}{RGB}{255, 255, 255}
+
+% ---------- MARGINS ----------
+\geometry{
+    a4paper,
+    top    = 0pt,
+    bottom = 0pt,
+    left   = 0pt,
+    right  = 0pt,
+}
+
+% ---------- FONTS ----------
+\usepackage[default,light]{sourcesanspro}
+
+% ---------- FONT SIZES ----------
+\newcommand{\namesize}{\fontsize{32}{36}\selectfont}
+\newcommand{\lastnamesize}{\fontsize{36}{40}\selectfont}
+\newcommand{\headlinesize}{\fontsize{8}{11}\selectfont}
+\newcommand{\contactsize}{\fontsize{8.5}{12}\selectfont}
+\newcommand{\sectionheadsize}{\fontsize{13}{16}\selectfont}
+\newcommand{\bodysize}{\fontsize{9}{12}\selectfont}
+\newcommand{\smallsize}{\fontsize{8}{10}\selectfont}
+\newcommand{\tinysize}{\fontsize{7.5}{9.5}\selectfont}
+
+% ---------- HYPERLINKS ----------
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = accent,
+    linkcolor   = accent,
+    pdfauthor   = {Helene David},
+    pdftitle    = {Helene David -- Resume},
+    pdfsubject  = {Resume},
+}
+
+% ---------- GLOBAL SPACING ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
