@@ -650,21 +650,29 @@ class TexGenerator:
 # ══════════════════════════════════════════════════════════════════════════
 
 def compile_pdf(working_dir: str):
-    """Run pdflatex twice. Returns (success, log_text)."""
-    cmd = ["pdflatex", "-interaction=nonstopmode", "resume.tex"]
+    """Run pdflatex twice for resume.tex (and resume-compact.tex if it exists).
+    Returns (success, log_text)."""
+    tex_files = ["resume.tex"]
+    compact = os.path.join(working_dir, "resume-compact.tex")
+    if os.path.exists(compact):
+        tex_files.append("resume-compact.tex")
+
     log = ""
-    for pass_num in (1, 2):
-        try:
-            result = subprocess.run(
-                cmd, cwd=working_dir, capture_output=True, text=True, timeout=30,
-            )
-            log += f"--- Pass {pass_num} ---\n{result.stdout}\n{result.stderr}\n"
-            if result.returncode != 0:
-                return False, log
-        except subprocess.TimeoutExpired:
-            return False, log + f"\nPass {pass_num} timed out."
-        except FileNotFoundError:
-            return False, "pdflatex not found. Is TeX Live installed?"
+    for tex_file in tex_files:
+        log += f"\n{'='*60}\n  Compiling {tex_file}\n{'='*60}\n"
+        cmd = ["pdflatex", "-interaction=nonstopmode", tex_file]
+        for pass_num in (1, 2):
+            try:
+                result = subprocess.run(
+                    cmd, cwd=working_dir, capture_output=True, text=True, timeout=30,
+                )
+                log += f"--- Pass {pass_num} ---\n{result.stdout}\n{result.stderr}\n"
+                if result.returncode != 0:
+                    return False, log
+            except subprocess.TimeoutExpired:
+                return False, log + f"\nPass {pass_num} timed out."
+            except FileNotFoundError:
+                return False, "pdflatex not found. Is TeX Live installed?"
     return True, log
 
 
@@ -1419,7 +1427,11 @@ class ResumeManagerApp(tk.Tk):
         self.update_idletasks()
         success, log = compile_pdf(self.WORKING_DIR)
         if success:
-            self.status_var.set("PDF compiled successfully!")
+            compact = os.path.join(self.WORKING_DIR, "resume-compact.tex")
+            if os.path.exists(compact):
+                self.status_var.set("PDFs compiled successfully! (full + compact)")
+            else:
+                self.status_var.set("PDF compiled successfully!")
             self.dirty = False
         else:
             self.status_var.set("Compilation failed. See log.")
