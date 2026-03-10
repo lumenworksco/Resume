@@ -1,0 +1,49 @@
+%% ==========================================================================
+%%  Research Plan Template
+%%  -----------------------------------------------------------------------
+%%  Compile with:  pdflatex research-plan.tex   (run twice for hyperlinks)
+%%
+%%  PROJECT STRUCTURE
+%%  -----------------
+%%  research-plan.tex  — Master document (loads packages + project files)
+%%  config.tex         — Colours, fonts, margins, hyperlinks, section styles
+%%  commands.tex       — Reusable macros (\makeplanheader, \phase, etc.)
+%%  content.tex        — YOUR DATA (edit this file to update your plan)
+%%
+%%  QUICK START
+%%  -----------
+%%  1. To update your research plan  → edit content.tex
+%%  2. To change colours/fonts       → edit config.tex
+%%  3. To add new entry types        → edit commands.tex
+%%  4. Compile: pdflatex research-plan.tex && pdflatex research-plan.tex
+%% ==========================================================================
+
+\documentclass[11pt, a4paper]{article}
+
+% ---------- CORE PACKAGES ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+% ---------- LOAD PROJECT FILES ----------
+\input{config}              % Colours, fonts, margins, section styles
+\input{commands}            % Reusable commands and environments
+
+% ---------- SERIF DEFAULT (academic) ----------
+\renewcommand{\familydefault}{\rmdefault}
+
+% ==========================================================================
+%                             DOCUMENT
+% ==========================================================================
+\begin{document}
+
+\bodysize
+
+\input{content}
+
+\end{document}

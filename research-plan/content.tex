@@ -1,0 +1,91 @@
+%% ==========================================================================
+%%  CONTENT — Your actual research plan data
+%%  -----------------------------------------------------------------------
+%%  This is the ONLY file you need to edit when updating your research plan.
+%%  Just modify entries, add new ones, or reorder sections.
+%% ==========================================================================
+
+% ========================== HEADER ========================================
+\makeplanheader
+    {Florian Pieter J Braun}
+    {Master's (September 2027)}
+    {Prof.\ Kawahara Daisuke}
+    {CS \& Communications Eng.}
+
+% ========================== TITLE =========================================
+\plantitle{Improving Reasoning Capabilities in Large Language Models}
+
+% ========================== INTRODUCTION ==================================
+\section{Introduction and Motivation}
+
+Existing large language models (LLMs) have achieved excellent results in terms of generation, translation, and summarization of text, but the possibility of executing multiple logical reasoning steps, solving mathematical problems, and making correct inferences over long pieces of text has been a challenge so far. Though surface-level reasoning has been improved by techniques like chain of thought prompting and reinforcement learning from human feedback, the underlying reasoning capability of the model and the process of its failure remain unknown.
+
+The research plan here seeks to propose a plan to research methods for enhancing as well as evaluating LLMs' capacity to reason, with a particular interest in understanding how it relates to world knowledge. The research plan is related to that pursued by Kawahara Laboratory, as it is centered on enhancing the understanding of world knowledge.
+
+% ========================== BACKGROUND ====================================
+\section{Background}
+
+The recent progress in NLP is largely the result of the introduction of transformer architectures and the training of large models on vast datasets. GPT-4, Claude, and Llama are a few examples that have redefined the possibilities offered by models of language. Yet, several studies have found that even the most powerful language models flounder when they are expected to engage in actual multi-step reasoning. Some key research directions in this area include:
+
+\begin{bullets}
+    \item \textbf{Chain of thought and tree of thought prompting:} Eliciting chain-of-thought and tree of thought reasoning from LLMs.
+    \item \textbf{Knowledge grounding:} Use of structured world knowledge to aid inferences, reducing hallucinations.
+    \item \textbf{Reasoning evaluation benchmarks:} Measures to successfully differentiate between genuine reasoning and pattern matching.
+    \item \textbf{Neuro-symbolic methods:} These integrate neural language models with symbolic components.
+\end{bullets}
+
+% ========================== PROPOSED RESEARCH =============================
+\section{Proposed Research Direction}
+
+The intended research is proposed to explore the possibility of utilizing world knowledge representations to improve multi-step reasoning in LLMs. The intended research would seek to find the following:
+
+\researchquestion{1}{Knowledge-augmented reasoning: How can knowledge structures such as knowledge graphs or ontologies be used to assist the reasoning process of LLMs to increase the fact consistency and logical correctness of the inference chain?}
+
+\researchquestion{2}{Reasoning evaluation: How do we create evaluation systems that can effectively differentiate between mere pattern matching and logical reasoning in the responses produced by LLMs?}
+
+\researchquestion{3}{Cross-lingual reasoning: The question here is whether the reasoning capabilities will survive the language shift. Also, whether multilingual training data will help improve reasoning for low-resource languages, especially with the lab's focus on computational linguistics.}
+
+% ========================== METHODOLOGY ===================================
+\section{Preliminary Methodology}
+
+The research would then proceed through the following phases:
+
+\phase{Phase 1: Literature review and baseline analysis}{Months 1--4}
+
+Extensive survey of the existing reasoning methods for LLMs. Determine the baseline performance on standard reasoning benchmarks, e.g., GSM8K, ARC, StrategyQA, using state-of-the-art open-source models.
+
+\phase{Phase 2: Knowledge integration experiments}{Months 5--12}
+
+Implement and design mechanisms that perform the task of injecting structured world knowledge during the process of reasoning. Exploit various approaches, including retrieval-aug\-ment\-ed generation with knowledge graphs, intermediate symbolic verification steps, and fine-tuning with reasoning-annotated data.
+
+\phase{Phase 3: Construction of evaluation framework}{Months 10--18}
+
+Construction of metrics and benchmarks which will help in probing whether models perform genuine inferences or statistical shortcuts. Testing these on a variety of languages to see the cross-lingual transfer.
+
+\phase{Phase 4: Writing thesis and dissemination}{Months 18--24}
+
+Compile findings into the master's thesis. Target publication at relevant venues such as ACL, EMNLP, or NAACL.
+
+% ========================== CONTRIBUTIONS =================================
+\section{Expected Contributions}
+
+\begin{bullets}
+    \item Novel techniques for integrating structured knowledge into the reasoning pipeline of LLM.
+    \item An evaluation framework for differentiating actual reasoning from the reproduction of patterns.
+    \item Empirical research on cross-lingual reasoning transfer, which may help deeply grasp the phenomenon of generalization for reasoning capabilities.
+    \item Open-source tools and data to facilitate future research in this field.
+\end{bullets}
+
+% ========================== RELEVANCE =====================================
+\section{Relevance to the Kawahara Laboratory}
+
+This line of research aligns well with the mission of Kawahara Laboratory, which seeks to create intelligent machines with cognitive abilities like human understanding of language. With the acquisition of world knowledge, Kawahara Laboratory's research has provided an excellent starting point for the knowledge-grounded reasoning approach presented in this research direction. In addition, Kawahara Laboratory's interest in uncovering the human mechanisms of understanding language can be related to providing insights for the machine mechanisms for making logical deductions from natural languages.
+
+% ========================== ACADEMIC BACKGROUND ===========================
+\section{Academic Background}
+
+Currently, I am completing my bachelor's degree in applied computer science with a specialization in AI and Data Engineering at UC Leuven-Limburg (UCLL), Belgium. I have also followed the CS50 program in computer science at Harvard University. Coursework includes a strong foundation in machine learning, deep learning, data engineering, and software development, with particular emphasis on applied AI techniques.
+
+Throughout my studies, I have pursued hands-on experience in AI and NLP. At the European Synbio Hackathon, I co-developed ``You Are What You Eat,'' an AI-powered tool that analyzes and breaks down food composition, to show my ability to quickly prototype intelligent systems collaboratively. I was chosen as a Top 50 finalist in the Future of IT Leaders: Data \& AI Challenge 2025 and independently created personal projects in the space of NLP and machine learning to further solidify my grasp on the practical challenges involved in system design for the processing and generation of natural language. I am also an active independent and algorithmic trader, using data analysis and quantitative reasoning on financial markets---skills directly applicable to rigorous empirical work required in NLP research.
+
+My main areas of interest fall in the realm of large language models, natural language processing, and deep learning. However, my primary aim is to understand and enhance the way in which models perform reasoning. Currently, I am in the process of preparing my bachelor's thesis. It is intended to be focused around the area of natural language processing. This ensures a solid foundation in the field and provides a good background entering a graduate study program. I am learning the Japanese language using WaniKani. This stems from a genuine interest in Japanese culture and the language. This further serves to reinforce the idea of entering a program at Waseda University to conduct research.

@@ -1,0 +1,58 @@
+%% ==========================================================================
+%%  CUSTOM COMMANDS — Reusable building blocks for research plan entries
+%%  -----------------------------------------------------------------------
+%%  To add new sections or entry types, define them here and use them
+%%  in content.tex. No need to touch raw LaTeX formatting.
+%% ==========================================================================
+
+% ---------- PLAN HEADER ----------
+% Usage: \makeplanheader{Applicant}{Program}{Supervisor}{Department}
+\newcommand{\makeplanheader}[4]{%
+    \begin{center}
+        {\namesize\bfseries\color{primary}#1}\\[4pt]
+        {\headerinfosize\color{subtle}%
+            \textbf{Program:} #2 \quad\textbar\quad
+            \textbf{Supervisor:} #3 \quad\textbar\quad
+            \textbf{Department:} #4%
+        }
+    \end{center}
+    \vspace{4pt}
+}
+
+% ---------- PLAN TITLE ----------
+% Usage: \plantitle{Improving Reasoning Capabilities in Large Language Models}
+\newcommand{\plantitle}[1]{%
+    \begin{center}
+        {\titlesize\bfseries\color{primary}Research Plan}\\[4pt]
+        {\titlesize\itshape #1}
+    \end{center}
+    \vspace{2pt}
+}
+
+% ---------- RESEARCH QUESTION ----------
+% Usage: \researchquestion{1}{How can knowledge graphs assist LLM reasoning?}
+%        followed by a paragraph of description text
+\newcommand{\researchquestion}[2]{%
+    \vspace{4pt}%
+    \noindent\textbf{#1.} \textit{#2}\par%
+    \vspace{2pt}%
+}
+
+% ---------- METHODOLOGY PHASE ----------
+% Usage: \phase{Phase 1: Literature Review}{Months 1--4}
+%        followed by a paragraph of description text
+\newcommand{\phase}[2]{%
+    \vspace{6pt}%
+    \noindent{\bodysize\textbf{#1}\hfill{\smallsize\color{subtle}#2}}\par%
+    \vspace{2pt}%
+}
+
+% ---------- COMPACT BULLET LIST ----------
+\newenvironment{bullets}{%
+    \vspace{0pt}%
+    \begin{itemize}[leftmargin=15pt, itemsep=2pt, parsep=0pt, topsep=4pt]%
+    \bodysize%
+}{%
+    \end{itemize}%
+    \vspace{2pt}%
+}
