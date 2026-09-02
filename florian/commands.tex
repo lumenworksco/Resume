@@ -59,14 +59,16 @@
         \node[fill=tagbg, text=tagtext, rounded corners=3pt,
               inner xsep=6pt, inner ysep=2.5pt,
               font=\smallsize\bfseries] (tag) {#1};%
-    }\,%
+    }\hspace{2pt}%
 }
 
 % ---------- SKILL CATEGORY ----------
 % Usage: \skillcategory{Category}{Tag1, Tag2, Tag3}
 \newcommand{\skillcategory}[2]{%
     \vspace{3pt}%
-    {\smallsize\color{subtle}\textbf{\uppercase{#1}}\quad}#2%
+    \begingroup\raggedright%
+    \noindent{\smallsize\color{subtle}\textbf{\uppercase{#1}}\quad}#2\par%
+    \endgroup%
     \vspace{2pt}%
 }
 

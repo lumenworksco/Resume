@@ -1,0 +1,55 @@
+%% ==========================================================================
+%%  Research CV — for supervisors, labs, and graduate applications
+%%  -----------------------------------------------------------------------
+%%  Compile with:  pdflatex resume-research.tex   (run twice for hyperlinks)
+%%             or: latexmk -pdf resume-research.tex
+%%
+%%  Shares config.tex and commands.tex with resume.tex.
+%%  Content lives in content-research.tex.
+%%
+%%  DIFFERENCE FROM resume.tex
+%%  --------------------------
+%%  Research output and methods lead the document. Commercial, event, and
+%%  extracurricular material is cut or compressed to a single line, on the
+%%  principle that a reviewer scanning for research capability reads volume
+%%  as dilution.
+%% ==========================================================================
+
+\documentclass[10pt, a4paper]{article}
+
+% ---------- CORE PACKAGES ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+
+% ---------- LOAD SHARED PROJECT FILES ----------
+\input{config}
+\input{commands}
+
+% ---------- RESEARCH CV OVERRIDES ----------
+\hypersetup{
+    pdftitle   = {Florian Braun -- Research CV},
+    pdfsubject = {Research CV},
+}
+
+% ---------- SANS-SERIF DEFAULT ----------
+\renewcommand{\familydefault}{\sfdefault}
+
+% ==========================================================================
+%                             DOCUMENT
+% ==========================================================================
+\begin{document}
+
+\bodysize
+
+\input{content-research}
+
+\end{document}

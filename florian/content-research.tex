@@ -1,0 +1,151 @@
+%% ==========================================================================
+%%  CONTENT — Research CV
+%%  -----------------------------------------------------------------------
+%%  Edit this file to update the research CV. The general-purpose resume
+%%  lives in content.tex and is unaffected by changes here.
+%%
+%%  EDITING NOTES
+%%  -------------
+%%  - Items marked  % CHECK  contain claims you should verify or fill in
+%%    before sending this to anyone.
+%%  - Preprints are labelled honestly as not peer reviewed. Keep it that
+%%    way: a reviewer who clicks through and finds an unreviewed paper
+%%    described as a publication stops reading.
+%% ==========================================================================
+
+% ========================== HEADER ========================================
+\makeheader
+    {Florian Braun}
+    {Language Model Interpretability \& Cross-Lingual NLP | Applied Computer Science, UC Leuven-Limburg}
+    {%
+        \contactlink{\faIcon{envelope}}{mailto:braunf25@proton.me}{braunf25@proton.me}%
+        \contactsep%
+        \contactitem{\faIcon{phone-alt}}{+352\,661\,258\,898}%
+        \contactsep%
+        \contactitem{\faIcon{map-marker-alt}}{Leuven, Belgium}%
+    }
+    {%
+        \contactlink{\faIcon{globe}}{https://www.braunf.com}{braunf.com}%
+        \contactsep%
+        \contactlink{\faIcon{linkedin}}{https://www.linkedin.com/in/braunflorian25}{linkedin.com/in/braunflorian25}%
+        % \contactsep%
+        % \contactlink{\faIcon{orcid}}{https://orcid.org/0000-0000-0000-0000}{ORCID}%  % CHECK: add your ORCID iD
+    }
+
+% ========================== RESEARCH INTERESTS ============================
+\section{Research Interests}
+
+{\bodysize
+Interpretability of language models, and what can legitimately be inferred from probing their internal representations. Current work concerns cross-lingual alignment in small Japanese--English bilingual models: whether pragmatic and cultural distinctions such as \textit{keigo} are genuinely encoded, or reconstructed from surface cues. Related interest in evaluation methodology --- benchmark contamination, and the gap between what intrinsic multilingual evaluations claim to measure and what they measure.
+}
+
+% ========================== RESEARCH OUTPUT ===============================
+\section{Research Output}
+
+{\bodysize\textbf{Interpretable Cross-Lingual Alignment in Small Language Models: Probing Cultural and Pragmatic Reasoning in Japanese--English Bilingual LLMs}\hfill{\smallsize\color{subtle}2026}}\par
+\vspace{1pt}
+{\bodysize\color{subtle}\textit{Preprint --- independent research, not peer reviewed}}\par
+\vspace{2pt}
+\begin{bullets}
+    \item Probed residual-stream representations across a bilingual model family for pragmatic and cultural distinctions, separating genuine encoding from surface-form correlates.  % CHECK: rewrite in one line to match your actual method and headline result
+\end{bullets}
+
+\vspace{4pt}
+{\bodysize\textbf{The Foundational Role of Data Structures and Algorithms in Artificial Intelligence Systems}\hfill{\smallsize\color{subtle}Oct 2025}}\par
+\vspace{1pt}
+{\bodysize\color{subtle}\textit{Preprint --- independent research, not peer reviewed}}
+
+% ========================== EDUCATION =====================================
+\section{Education}
+
+\education{UC Leuven-Limburg}{Bachelor of Applied Science (BASc), Computer Science --- AI \& Data Engineering}{Sep 2024 -- Jun 2027}
+\education{KU Leuven}{Japanese Language Programme (JPN 101 / 102)}{Feb 2026 -- Dec 2026}
+\education{Korea University}{International Summer Program --- Linear Algebra}{Jun 2026 -- Jul 2026}
+\education{KU Leuven}{Bachelor of Science (BS), Computer Science}{Sep 2023 -- Sep 2024}
+\education{Harvard University}{Non-Degree Program --- CS50, Computer Science}{Sep 2024 -- Dec 2024}
+\education{European School of Luxembourg 1}{European Baccalaureate}{Feb 2012 -- Jul 2023}
+
+% ========================== RESEARCH PROJECTS =============================
+\section{Research \& Technical Projects}
+
+\project{Predicting Player Progression from On-Pitch Performance Data \,{\normalfont\color{subtle}--- OH Leuven International Week}}{Mar 2026}
+\begin{bullets}
+    \item Built a predictive model for whether a lower-league goalkeeper will succeed at a higher level, using performance data alone and no contextual variables.
+    \item Dataset of 693 goalkeepers across 40+ leagues (2019--2026); engineered 1{,}009 KPIs per player and reduced to 75 through a six-method feature selection pipeline.
+    \item Random Forest + XGBoost ensemble under 5-fold cross-validation reached 0.87 AUC; passing and distribution, not shot-stopping, were the strongest predictors of progression.
+\end{bullets}
+
+\project{Decoding EEG Signals to Interpretable Outputs \,{\normalfont\color{subtle}--- NeuroMedix Hackathon, finalist}}{Mar 2026}
+\begin{bullets}
+    \item Applied machine learning to raw EEG recordings, translating decoded neural signals into interpretable outputs on a sponsor-defined case in a team of four.
+\end{bullets}
+
+\project{On-Device Behavioural Modelling for Burnout Detection \,{\normalfont\color{subtle}--- CalmCampus}}{Jan 2026 -- Present}
+\begin{bullets}
+    \item Designed the modelling approach for detecting burnout risk from passive behavioural signals --- typing dynamics, application usage, sleep rhythm --- with inference performed entirely on-device so no raw data leaves the phone.
+    \item Privacy-by-design architecture developed with KU Leuven STUVO; reached the finals of the KU Leuven KICK Challenge 2026.
+\end{bullets}
+
+% ========================== SKILLS ========================================
+\section{Methods \& Tools}
+
+\skillcategory{Modelling}{%
+    \skilltag{PyTorch}\skilltag{Transformers}\skilltag{Hugging Face}\skilltag{scikit-learn}\skilltag{XGBoost}%
+}
+\skillcategory{Interpretability}{%
+    \skilltag{Probing classifiers}\skilltag{Representation analysis}\skilltag{Activation steering}%
+}
+\skillcategory{Empirical}{%
+    \skilltag{Feature selection}\skilltag{Cross-validation}\skilltag{Ablation design}\skilltag{Contamination testing}%
+}
+\skillcategory{Engineering}{%
+    \skilltag{Python}\skilltag{pandas}\skilltag{NumPy}\skilltag{SQL}\skilltag{Git}\skilltag{\LaTeX}%
+}
+
+% ========================== COURSEWORK ====================================
+\section{Relevant Coursework}
+
+{\bodysize
+\textbf{Linear Algebra} {\color{subtle}(ISC112, Korea University --- Prof. Hongjoong Kim)}\\[2pt]
+\textbf{Introduction to Algorithms} {\color{subtle}(MIT OCW 6.006)}\\[2pt]
+\textbf{Preparatory Mathematics} {\color{subtle}(MATH 101, KU Leuven)}\\[2pt]
+\textbf{Japanese Language \& Kanji, JLPT N5} {\color{subtle}(JPN 101 / 102, KU Leuven)}
+}
+
+\vspace{4pt}
+{\smallsize\color{subtle}Selected certifications: Transformer Models with PyTorch, Intermediate Deep Learning with PyTorch, Developing LLM Applications with LangChain, Data Scientist, Data Engineer {\color{subtle}--- DataCamp}}
+
+% ========================== EXPERIENCE ====================================
+\section{Selected Experience}
+
+\experience{Co-Founder \& CTO}{CalmCampus}{Jan 2026 -- Present}{Leuven, Belgium}
+\begin{bullets}
+    \item Lead technical development of a privacy-first student wellbeing platform: data strategy, on-device ML approach, and GDPR-conscious architecture, in collaboration with KU Leuven STUVO.
+\end{bullets}
+
+\experience{Founder}{Lumen Studio}{Oct 2023 -- Present}{Leuven, Belgium}
+\begin{bullets}
+    \item Independent product studio; full-stack engineering across back-end services, APIs, data infrastructure, and deployment.
+\end{bullets}
+
+\experience{Information Manager}{NEXT Leuven}{May 2026 -- Present}{Leuven, Belgium}
+\begin{bullets}
+    \item Maintain technical infrastructure for one of Belgium's largest student entrepreneurship organisations; delivered a 60-base, 450-table, 76{,}000-record data migration with a custom Python export and deduplication toolkit.
+\end{bullets}
+
+% ========================== AWARDS ========================================
+\section{Awards}
+
+\award{Finalist --- KU Leuven KICK Challenge 2026}{KU Leuven KICK}{May 2026}
+
+\vspace{4pt}
+\award{Finalist (Top 50) --- Future of IT Leaders: Data \& AI Challenge}{Editx}{Nov 2025}
+
+% ========================== LANGUAGES =====================================
+\section{Languages}
+
+\langentry{Native / Bilingual}{Dutch, French}%
+\contactsep%
+\langentry{Full Professional}{English}%
+\contactsep%
+\langentry{Elementary}{German, Japanese, Spanish}
