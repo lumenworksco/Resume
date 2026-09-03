@@ -4,13 +4,23 @@
 %%  Edit this file to update the research CV. The general-purpose resume
 %%  lives in content.tex and is unaffected by changes here.
 %%
-%%  EDITING NOTES
-%%  -------------
-%%  - Items marked  % CHECK  contain claims you should verify or fill in
-%%    before sending this to anyone.
-%%  - Preprints are labelled honestly as not peer reviewed. Keep it that
-%%    way: a reviewer who clicks through and finds an unreviewed paper
-%%    described as a publication stops reading.
+%%  WHAT THIS VERSION IS
+%%  --------------------
+%%  A complete research CV, not a trimmed resume. Everything an academic
+%%  reader looks for is here: output, education, empirical work, teaching
+%%  and service, coursework, languages. What is absent is absent on purpose
+%%  — commercial pitches, event and social-media roles, and vendor
+%%  certificates dilute the signal a supervisor is scanning for.
+%%
+%%  DELIBERATELY OMITTED (restore in one line if you want them back):
+%%    - Conservatoire guitar certificate
+%%    - Next Level Challenge and European Synbio hackathons
+%%    - Security consulting (i-Force, Brussels Airport)
+%%    - Insignia Head of Events / Social Media Manager / Culture Fest
+%%    - Pupils' Committee Sports front-end role
+%%    - Bloomberg, TryHackMe, GitHub Foundations, IPv6 certificates
+%%
+%%  Items marked  % CHECK  need your verification before you send this.
 %% ==========================================================================
 
 % ========================== HEADER ========================================
@@ -27,16 +37,17 @@
     {%
         \contactlink{\faIcon{globe}}{https://www.braunf.com}{braunf.com}%
         \contactsep%
+        \contactlink{\faIcon{researchgate}}{https://www.researchgate.net/profile/Florian-Braun}{ResearchGate}%  % CHECK: confirm your profile URL
+        \contactsep%
         \contactlink{\faIcon{linkedin}}{https://www.linkedin.com/in/braunflorian25}{linkedin.com/in/braunflorian25}%
-        % \contactsep%
-        % \contactlink{\faIcon{orcid}}{https://orcid.org/0000-0000-0000-0000}{ORCID}%  % CHECK: add your ORCID iD
+        % \contactsep\contactlink{\faIcon{orcid}}{https://orcid.org/0000-0000-0000-0000}{ORCID}%  % CHECK: add your ORCID iD
     }
 
 % ========================== RESEARCH INTERESTS ============================
 \section{Research Interests}
 
 {\bodysize
-Interpretability of language models, and what can legitimately be inferred from probing their internal representations. Current work concerns cross-lingual alignment in small Japanese--English bilingual models: whether pragmatic and cultural distinctions such as \textit{keigo} are genuinely encoded, or reconstructed from surface cues. Related interest in evaluation methodology --- benchmark contamination, and the gap between what intrinsic multilingual evaluations claim to measure and what they measure.
+Interpretability of language models, and what can legitimately be inferred from probing their internal representations. Two strands: whether pragmatic and cultural distinctions are genuinely encoded in small bilingual models or reconstructed from surface cues, and how to separate real signal from confounds when probing --- most recently for detecting benchmark contamination. Underlying both is an interest in evaluation methodology, and in the gap between what a benchmark claims to measure and what it measures.
 }
 
 % ========================== RESEARCH OUTPUT ===============================
@@ -70,9 +81,21 @@ Interpretability of language models, and what can legitimately be inferred from 
 \education{UC Leuven-Limburg}{Bachelor of Applied Science (BASc), Computer Science --- AI \& Data Engineering}{Sep 2024 -- Jun 2027}
 \education{KU Leuven}{Japanese Language Programme (JPN 101 / 102)}{Feb 2026 -- Dec 2026}
 \education{Korea University}{International Summer Program --- Linear Algebra}{Jun 2026 -- Jul 2026}
+\education{Yale University}{Non-Degree Program --- Finance}{Jan 2026 -- Jun 2026}
 \education{KU Leuven}{Bachelor of Science (BS), Computer Science}{Sep 2023 -- Sep 2024}
 \education{Harvard University}{Non-Degree Program --- CS50, Computer Science}{Sep 2024 -- Dec 2024}
 \education{European School of Luxembourg 1}{European Baccalaureate}{Feb 2012 -- Jul 2023}
+
+% ========================== LANGUAGES =====================================
+% Placed high deliberately: for cross-lingual and multilingual NLP this is a
+% research qualification, not a footer item.
+\section{Languages}
+
+\langentry{Native / Bilingual}{Dutch, French}%
+\contactsep%
+\langentry{Full Professional}{English}%
+\contactsep%
+\langentry{Elementary}{German, Japanese (JLPT N5), Spanish}
 
 % ========================== RESEARCH PROJECTS =============================
 \section{Research \& Technical Projects}
@@ -95,11 +118,23 @@ Interpretability of language models, and what can legitimately be inferred from 
     \item Privacy-by-design architecture developed with KU Leuven STUVO; reached the finals of the KU Leuven KICK Challenge 2026.
 \end{bullets}
 
+% ========================== TEACHING & SERVICE ============================
+\section{Teaching \& Service}
+
+\experience{Founder \& President}{ESL1 IT Club}{Feb 2022 -- Feb 2023}{European School of Luxembourg 1}
+\begin{bullets}
+    \item Founded and ran a student IT club: organised workshops and mentored peers in programming and IT skills.
+\end{bullets}
+
+\experience{Student Representative}{Digital Teaching and Learning Working Group}{Jan 2023 -- Jun 2023}{European School of Luxembourg 1}
+\begin{bullets}
+    \item Represented students on the integration of digitalisation into courses and the wider curriculum.
+\end{bullets}
+
 % ========================== TOOLS =========================================
 % Deliberately short. Methods belong in the entries above, where the work
 % demonstrates them; a tag asserting "probing classifiers" tells a reviewer
 % less than a paper title containing the phrase, and reads as padding.
-% This section is tools only.
 \section{Tools}
 
 \vspace{3pt}
@@ -114,11 +149,11 @@ Interpretability of language models, and what can legitimately be inferred from 
 \textbf{Linear Algebra} {\color{subtle}(ISC112, Korea University --- Prof. Hongjoong Kim)}\\[2pt]
 \textbf{Introduction to Algorithms} {\color{subtle}(MIT OCW 6.006)}\\[2pt]
 \textbf{Preparatory Mathematics} {\color{subtle}(MATH 101, KU Leuven)}\\[2pt]
-\textbf{Japanese Language \& Kanji, JLPT N5} {\color{subtle}(JPN 101 / 102, KU Leuven)}
+\textbf{Japanese Language \& Kanji, JLPT N5} {\color{subtle}(JPN 101 / 102, KU Leuven --- Genki I, WaniKani)}
 }
 
 \vspace{4pt}
-{\smallsize\color{subtle}Selected certifications: Transformer Models with PyTorch, Intermediate Deep Learning with PyTorch, Developing LLM Applications with LangChain, Data Scientist, Data Engineer {\color{subtle}--- DataCamp}}
+{\smallsize\color{subtle}Selected certifications: Transformer Models with PyTorch, Intermediate Deep Learning with PyTorch, Developing LLM Applications with LangChain, Data Scientist, Data Engineer, Python Data Associate --- DataCamp}
 
 % ========================== EXPERIENCE ====================================
 \section{Selected Experience}
@@ -145,12 +180,3 @@ Interpretability of language models, and what can legitimately be inferred from 
 
 \vspace{4pt}
 \award{Finalist (Top 50) --- Future of IT Leaders: Data \& AI Challenge}{Editx}{Nov 2025}
-
-% ========================== LANGUAGES =====================================
-\section{Languages}
-
-\langentry{Native / Bilingual}{Dutch, French}%
-\contactsep%
-\langentry{Full Professional}{English}%
-\contactsep%
-\langentry{Elementary}{German, Japanese, Spanish}
