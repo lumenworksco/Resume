@@ -37,7 +37,7 @@
     {%
         \contactlink{\faIcon{globe}}{https://www.braunf.com}{braunf.com}%
         \contactsep%
-        \contactlink{\faIcon{researchgate}}{https://www.researchgate.net/profile/Florian-Braun}{ResearchGate}%  % CHECK: confirm your profile URL
+        \contactlink{\faIcon{researchgate}}{https://www.researchgate.net/profile/Florian-Braun-14}{ResearchGate}%
         \contactsep%
         \contactlink{\faIcon{linkedin}}{https://www.linkedin.com/in/braunflorian25}{linkedin.com/in/braunflorian25}%
         % \contactsep\contactlink{\faIcon{orcid}}{https://orcid.org/0000-0000-0000-0000}{ORCID}%  % CHECK: add your ORCID iD
@@ -55,25 +55,39 @@ Interpretability of language models, and what can legitimately be inferred from 
 
 {\bodysize\textbf{Excess Separability: Nuisance-Controlled Residual-Stream Probing for Benchmark Contamination Detection}\hfill{\smallsize\color{subtle}Aug 2026}}\par
 \vspace{1pt}
-{\bodysize\color{subtle}\textit{Preprint --- not peer reviewed}}\par
+{\bodysize\color{subtle}\textit{Preprint --- not peer reviewed} \quad\href{https://arxiv.org/abs/2608.12652}{\smallsize arXiv:2608.12652}}\par
 \vspace{2pt}
 \begin{bullets}
-    \item Detects benchmark contamination by probing residual-stream representations, controlling for nuisance variation so that separability due to memorisation is distinguished from separability a confound already explains.  % CHECK: replace with your own one-line statement of method and result
+    \item Shows that naive linear probing of transformer activations fails as a contamination test: false positive rates range from 0.03 to 0.99 under the null depending on control-set size.
+    \item Proposes a zero-sum contrast on the depth profile of probe accuracy, recentred on a level-matched placebo baseline. All four well-matched Pile arms return null, and the protocol abstains on temporal splits rather than reporting an unreliable verdict.
 \end{bullets}
 
 \vspace{4pt}
 {\bodysize\textbf{Interpretable Cross-Lingual Alignment in Small Language Models: Probing Cultural and Pragmatic Reasoning in Japanese--English Bilingual LLMs}\hfill{\smallsize\color{subtle}Aug 2026}}\par
 \vspace{1pt}
-{\bodysize\color{subtle}\textit{Preprint --- not peer reviewed}}\par
+{\bodysize\color{subtle}\textit{Preprint --- not peer reviewed} \quad\href{https://arxiv.org/abs/2608.14896}{\smallsize arXiv:2608.14896}}\par
 \vspace{2pt}
 \begin{bullets}
-    \item Probes whether pragmatic and cultural distinctions are encoded in bilingual model representations or reconstructed from surface cues.  % CHECK: replace with your own one-line statement of method and result
+    \item Introduces J-PragEval-v0, a benchmark for Japanese pragmatic phenomena --- honorifics, in-group / out-group reference, context-dependent politeness, and zero anaphora --- evaluated on TinySwallow-1.5B with linear probes and teacher forcing.
+    \item Honorific register is cleanly linearly decodable from the residual stream (0.96 balanced accuracy at layer 15, 93\% flip rate); implicit subjects and in-group reference are not (0.48 and 0.38) yet still shift generation at 0.77 and 0.79 flip rates.
+    \item Proposes Pragmatic Representation Steering, an inference-time method for editing residual-stream activations.
 \end{bullets}
 
 \vspace{4pt}
 {\bodysize\textbf{The Foundational Role of Data Structures and Algorithms in Artificial Intelligence Systems}\hfill{\smallsize\color{subtle}Oct 2025}}\par
 \vspace{1pt}
 {\bodysize\color{subtle}\textit{Thesis --- UC Leuven-Limburg}}  % CHECK: confirm degree level / course
+
+% ========================== SOFTWARE ======================================
+\section{Software}
+
+{\bodysize\textbf{RSCP: Residual-Stream Contamination Probing}\hfill{\smallsize\color{subtle}Aug 2026}}\par
+\vspace{1pt}
+{\bodysize\color{subtle}\textit{Reference implementation} \quad\href{https://doi.org/10.5281/zenodo.21855510}{\smallsize doi:10.5281/zenodo.21855510}}\par
+\vspace{2pt}
+\begin{bullets}
+    \item Released implementation of the level-matched placebo protocol, including the statistical foundation, validation studies, generative simulators, item-set construction tools, and an audit of membership-inference splits.
+\end{bullets}
 
 % ========================== EDUCATION =====================================
 \section{Education}
@@ -87,6 +101,9 @@ Interpretability of language models, and what can legitimately be inferred from 
 \education{European School of Luxembourg 1}{European Baccalaureate}{Feb 2012 -- Jul 2023}
 
 % ========================== LANGUAGES =====================================
+% Page break keeps this heading with its line rather than orphaned at the foot
+% of page 1. Remove if you shorten the sections above.
+\newpage
 % Placed high deliberately: for cross-lingual and multilingual NLP this is a
 % research qualification, not a footer item.
 \section{Languages}
@@ -112,12 +129,6 @@ Interpretability of language models, and what can legitimately be inferred from 
     \item Applied machine learning to raw EEG recordings, translating decoded neural signals into interpretable outputs on a sponsor-defined case in a team of four.
 \end{bullets}
 
-\project{On-Device Behavioural Modelling for Burnout Detection \,{\normalfont\color{subtle}--- CalmCampus}}{Jan 2026 -- Present}
-\begin{bullets}
-    \item Designed the modelling approach for detecting burnout risk from passive behavioural signals --- typing dynamics, application usage, sleep rhythm --- with inference performed entirely on-device so no raw data leaves the phone.
-    \item Privacy-by-design architecture developed with KU Leuven STUVO; reached the finals of the KU Leuven KICK Challenge 2026.
-\end{bullets}
-
 % ========================== TEACHING & SERVICE ============================
 \section{Teaching \& Service}
 
@@ -130,17 +141,6 @@ Interpretability of language models, and what can legitimately be inferred from 
 \begin{bullets}
     \item Represented students on the integration of digitalisation into courses and the wider curriculum.
 \end{bullets}
-
-% ========================== TOOLS =========================================
-% Deliberately short. Methods belong in the entries above, where the work
-% demonstrates them; a tag asserting "probing classifiers" tells a reviewer
-% less than a paper title containing the phrase, and reads as padding.
-\section{Tools}
-
-\vspace{3pt}
-\begingroup\raggedright
-\skilltag{Python}\skilltag{PyTorch}\skilltag{Transformers}\skilltag{scikit-learn}\skilltag{XGBoost}\skilltag{pandas}\skilltag{NumPy}\skilltag{Git}\skilltag{LaTeX}
-\par\endgroup
 
 % ========================== COURSEWORK ====================================
 \section{Relevant Coursework}
@@ -160,7 +160,7 @@ Interpretability of language models, and what can legitimately be inferred from 
 
 \experience{Co-Founder \& CTO}{CalmCampus}{Jan 2026 -- Present}{Leuven, Belgium}
 \begin{bullets}
-    \item Lead technical development of a privacy-first student wellbeing platform: data strategy, on-device ML approach, and GDPR-conscious architecture, in collaboration with KU Leuven STUVO.
+    \item Designed the modelling approach for detecting burnout risk from passive behavioural signals --- typing dynamics, application usage, sleep rhythm --- with inference performed entirely on-device so no raw data leaves the phone. Privacy-by-design architecture built with KU Leuven STUVO; finalist, KU Leuven KICK Challenge 2026.
 \end{bullets}
 
 \experience{Founder}{Lumen Studio}{Oct 2023 -- Present}{Leuven, Belgium}
