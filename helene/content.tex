@@ -9,15 +9,16 @@
 \end{tikzpicture}%
 %
 \noindent\begin{minipage}[t]{\sidebarwidth}%
-    \vspace{28pt}%
+    \vspace{20pt}%
     \hspace{\sidebarpadding}%
     \begin{minipage}[t]{\dimexpr\sidebarwidth-2\sidebarpadding\relax}
         \RaggedRight
 
-        % ========================== HEADER ========================
-        \makeheader{H\'el\`ene}{David}{Business Management and Marketing Student}
-
-        \vspace{4pt}
+        % ========================== PHOTO =========================
+        \centering
+        \profilephoto{photo.jpg}{88pt}
+        \par\vspace{2pt}
+        \RaggedRight
 
         % ========================== CONTACT =======================
         \sidebarsection{Contact}
@@ -25,28 +26,30 @@
         \contactitem{\faIcon{phone-alt}}{+352\,621\,217\,427}
         \contactlink{\faIcon{envelope}}{mailto:helene.david@proton.me}{helene.david@proton.me}
         \contactitem{\faIcon{map-marker-alt}}{Leuven, Belgium}
-        \contactlink{\faIcon{linkedin}}{https://www.linkedin.com/in/helenedavid711}{linkedin.com/in/helenedavid711}
+        \contactlink{\faIcon{linkedin}}{https://www.linkedin.com/in/helenedavid11}{linkedin.com/in/helenedavid11}
         \contactlink{\faIcon{globe}}{https://hdav.myportfolio.com}{hdav.myportfolio.com}
 
         % ========================== LANGUAGES =====================
         \sidebarsection{Languages}
 
-        \langentry{French}{Native}
-        \langentry{English}{Full Professional}
-        \langentry{German}{Limited Working}
-        \langentry{Dutch}{Limited Working}
+        \langbar{French}{Native}{1}
+        \langbar{English}{Full Professional}{0.85}
+        \langbar{Dutch}{Limited Working}{0.45}
+        \langbar{German}{Limited Working}{0.45}
 
         % ========================== SKILLS ========================
         \sidebarsection{Skills}
 
+        \skillitem{Business Strategy \& Go-to-Market}
+        \skillitem{Product Innovation}
+        \skillitem{Pitch \& Presentation}
+        \skillitem{Stakeholder Engagement}
+        \skillitem{Linear Algebra}
         \skillitem{Adobe Illustrator}
         \skillitem{Adobe Photoshop}
         \skillitem{Graphic Design}
-        \skillitem{Social Media Management}
-        \skillitem{Content Creation}
-        \skillitem{Digital Marketing}
-        \skillitem{Brand Strategy}
-        \skillitem{Event Planning}
+        \skillitem{Social Media \& Content Creation}
+        \skillitem{Digital Marketing \& Brand Strategy}
         \skillitem{SEO Fundamentals}
 
         % ========================= CERTIFICATIONS =================
@@ -54,59 +57,48 @@
 
         \certentry{LinkedIn Marketing Strategy}
         \certentry{Graphic Design Essentials}
+        \certentry{Getting Started with Semrush}
         \certentry{Inbound Sales}
         \certentry{LinkedIn Content \& Creative Design}
         \certentry{SEO Essentials with Semrush}
 
-        % ========================== INTERESTS =====================
-        \sidebarsection{Interests}
-
-        \vspace{4pt}
-        \noindent
-        \begin{tabular}{@{}l@{\hspace{12pt}}l@{}}
-            \interestitem{\faIcon{palette}}{Design} &
-            \interestitem{\faIcon{camera}}{Photography} \\[5pt]
-            \interestitem{\faIcon{plane}}{Travel} &
-            \interestitem{\faIcon{book}}{Reading} \\[5pt]
-            \interestitem{\faIcon{music}}{Music} &
-            \interestitem{\faIcon{utensils}}{Cooking} \\
-        \end{tabular}
-
     \end{minipage}
 \end{minipage}%
 \begin{minipage}[t]{\dimexpr\mainwidth-2pt\relax}%
-    \vspace{28pt}%
+    \vspace{20pt}%
     \hspace{\mainpadding}%
     \begin{minipage}[t]{\dimexpr\mainwidth-2\mainpadding-2pt\relax}
         \RaggedRight
+
+        % ========================== HEADER ========================
+        \mainheader{H\'el\`ene}{David}{International Business Management \& Marketing Student \textperiodcentered{} UCLL}
+
 
         % ========================== PROFILE =======================
         \mainsection{Profile}
 
         \vspace{2pt}
         {\bodysize
-        Business Management and Marketing student at UCLL with a passion for understanding how the world works and how people think. Combining creative design skills with strategic marketing knowledge to build engaging brand experiences. Experienced in social media management, visual branding, and event coordination through student organisations and entrepreneurial projects.
+        Business and marketing student with an international path across Luxembourg, Brussels, Leuven and Seoul. Co-founder and CEO of CalmCampus, a privacy-first student wellbeing startup. Driven by understanding how the world works and how people think, and by turning that into products that are commercially viable and ethically responsible. Combines strategy with creative design, social media and event experience.
         }
         \vspace{4pt}
-
-        % ========================== EDUCATION =====================
-        \mainsection{Education}
-
-        \educationentry{UC Leuven-Limburg}{Bachelor of Applied Science (BASc), International Business}{Sep 2024 -- Jul 2027}
-
-        \educationentry{ULB (Universit\'e Libre de Bruxelles)}{Bachelor of Science (BS), Biomedical Sciences}{Feb 2024 -- Jun 2024}
-
-        \educationentry{ULB (Universit\'e Libre de Bruxelles)}{Bachelor of Arts (BA), Political Science}{Sep 2023 -- Jan 2024}
-
-        \educationentry{European School of Luxembourg 1}{European Baccalaureate}{Sep 2009 -- Jul 2023}
 
         % ========================== EXPERIENCE ====================
         \mainsection{Experience}
 
+        \experienceentry{Co-Founder \& CEO}{CalmCampus --- KU Leuven KICK Challenge}{Jan 2026 -- Present}{Leuven, Belgium}
+        \begin{bullets}
+            \item Privacy-first student wellbeing platform that flags early burnout risk through passive behavioural signals and on-device AI, without daily self-reporting or individual surveillance.
+            \item Define the business strategy, value proposition and go-to-market approach.
+            \item Lead stakeholder conversations with universities, student services and potential partners.
+            \item Co-plan the pilot with KU Leuven KICK and KU Leuven STUVO; own the pitch, partnership strategy and validation roadmap.
+        \end{bullets}
+
+        \vspace{4pt}
+
         \experienceentry{Head of Social Media}{Insignia --- UCLL International Student Association}{Sep 2025 -- Present}{Leuven, Belgium}
         \begin{bullets}
             \item Oversee a small team to manage Insignia's online presence and create engaging digital content across multiple platforms.
-            \item Develop content strategy and coordinate visual branding for events and campaigns.
             \item Grew follower engagement through consistent posting schedules and targeted storytelling.
         \end{bullets}
 
@@ -115,14 +107,18 @@
             \item Helped plan and coordinate student-focused events as part of UCLL's international student organisation.
         \end{bullets}
 
-        \vspace{4pt}
+        % ========================== EDUCATION =====================
+        \mainsection{Education}
 
-        \experienceentry{Co-Founder}{Pulse Watch Co.}{Nov 2024 -- Present}{Leuven, Belgium}
-        \begin{bullets}
-            \item Co-founded a modern watchmaking brand combining timeless craftsmanship with contemporary design.
-            \item Handle brand identity, visual design, and marketing strategy for the launch phase.
-            \item Design all visual assets including logos, packaging, and promotional materials using Adobe Illustrator and Photoshop.
-        \end{bullets}
+        \educationentry{UC Leuven-Limburg}{Bachelor in Business Management, International Business}{Sep 2024 -- Jul 2027 (expected)}
+
+        \educationentry{Korea University, Seoul}{International Summer Program, Linear Algebra}{Jun 2026 -- Jul 2026}
+
+        \educationentry{ULB (Universit\'e Libre de Bruxelles)}{Bachelor of Science (BS), Biomedical Sciences}{Feb 2024 -- Jun 2024}
+
+        \educationentry{ULB (Universit\'e Libre de Bruxelles)}{Bachelor of Arts (BA), Political Science}{Sep 2023 -- Jan 2024}
+
+        \educationentry{European School of Luxembourg 1}{European Baccalaureate}{Sep 2009 -- Jul 2023}
 
     \end{minipage}
 \end{minipage}
